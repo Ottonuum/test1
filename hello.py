@@ -2,8 +2,8 @@
 
 # print('Hello, ' + user_name + '!')
 
-a = input('a: ')
-b = input('b: ')
+a = int(input('a: '))
+b = int(input('b: '))
 
 print(int(a) + int(b))
 print(int(a) - int(b))

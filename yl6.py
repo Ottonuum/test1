@@ -5,7 +5,7 @@ c = int(input('c:'))
 if a > b and a > c:
     print('max:', a)
 elif b > c:
-print('max:', b)
+    print('max:', b)
 else:
     print('max:',c)
     

@@ -1,0 +1,2 @@
+fruits = ['õun', 'pirn', 'banaan']
+ 

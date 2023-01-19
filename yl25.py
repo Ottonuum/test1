@@ -13,3 +13,6 @@ me['dessert'] = 'ice cream'
 
 for k, v in me.items():
     print(k, v)
+
+# me persoal code 
+

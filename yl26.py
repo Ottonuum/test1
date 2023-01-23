@@ -16,5 +16,8 @@ Milk             67     254      89    129       76'''
 
 data_f = [line.split() for line in data.split('\n') if line]
 
+exp_start = data_f.index(['Expenses'])
+
+commissions = [0]*len(data_f[1])
 
 

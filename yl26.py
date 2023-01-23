@@ -32,4 +32,8 @@ for i in data_f[1]:
 
 print('\nCommission:', end='')
 
+for indx, com in enumerate(commissions):
+    for length in range(len(data_f[1][indx]) - len(str(int(com)))):
+        print(' ', end='')
+    print(int(com), end=' ')
 

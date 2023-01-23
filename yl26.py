@@ -1,39 +1,85 @@
-data = '''Revenue
+sales = {
+    "johnver": {
+        "revenue": {
+            "tea": 190,
+            "coffee": 325,
+            "water": 682,
+            "milk": 829
+        },
+        "expenses": {
+            "tea": 120,
+            "coffee": 300,
+            "water": 50,
+            "milk": 67
+        }
+    },
+    "Vanston": {
+        "revenue": {
+             "tea": 140,
+            "coffee": 19,
+            "water": 14,
+            "milk": 140
+        },
+        "expenses": {
+             "tea": 65,
+            "coffee": 10,
+            "water": 299,
+            "milk": 254
+        },
+    },
+    "Danbree": {
+        "revenue": {
+             "tea": 1926,
+            "coffee": 293,
+            "water": 852,
+            "milk": 609
+        },
+        "expenses": {
+             "tea": 890,
+            "coffee": 23,
+            "water": 1290,
+            "milk": 89
+        },
+    },
+    "Vansey": {
+        "revenue": {
+            "tea": 14,
+            "coffee": 1491,
+            "water": 56,
+            "milk": 120
+    },
+        "expenses": {
+            "tea": 54,
+            "coffee": 802,
+            "water": 12,
+            "milk": 129
+        },
+    },
+    "Mundyke": {
+        "revenue":{
+            "tea": 143,
+            "coffee": 162,
+            "water":659,
+            "milk": 87
+        },
+        "expenses": {
+            "tea": 430,
+            "coffee": 235,
+            "water": 145,
+            "milk": 76
+        },
+    },
+}
 
-            Johnver Vanston Danbree Vansey  Mundyke
-Tea             190     140    1926     14      143
-Coffee          325      19     293   1491      162
-Water           682      14     852     56      659
-Milk            829     140     609    120       87
+for employee_name, employee_sales in sales.items():
+    print(employee_name)
 
-Expenses
+    comission = 0
+    for drink_name, drink_value in employee_sales['revenue'].items():
+        profit = drink_value - employee_sales['expenses'][drink_name]
+        if profit > 0:
+            print('kasum on pos', profit * 0.062)
+            comission += profit * 0.062
 
-            Johnver Vanston Danbree Vansey  Mundyke
-Tea             120      65     890     54      430
-Coffee          300      10      23    802      235
-Water            50     299    1290     12      145
-Milk             67     254      89    129       76'''
-
-data_f = [line.split() for line in data.split('\n') if line]
-
-exp_start = data_f.index(['Expenses'])
-
-commissions = [0]*len(data_f[1])
-
-for p in range(len(data_f[1])):
-    for i in range(exp_start - 2):
-        rev = int(data_f[2 + i][1 + p]) - int(data_f[2 + i + exp_start][1 + p])
-        if rev > 0:
-            commissions[p] += 0.062 * rev
-
-print('\t  ', end='')
-for i in data_f[1]:
-    print('', i, end='')
-
-print('\nCommission:', end='')
-
-for indx, com in enumerate(commissions):
-    for length in range(len(data_f[1][indx]) - len(str(int(com)))):
-        print(' ', end='')
-    print(int(com), end=' ')
-
+    print(comission)
+    

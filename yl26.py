@@ -20,4 +20,16 @@ exp_start = data_f.index(['Expenses'])
 
 commissions = [0]*len(data_f[1])
 
+for p in range(len(data_f[1])):
+    for i in range(exp_start - 2):
+        rev = int(data_f[2 + i][1 + p]) - int(data_f[2 + i + exp_start][1 + p])
+        if rev > 0:
+            commissions[p] += 0.062 * rev
+
+print('\t  ', end='')
+for i in data_f[1]:
+    print('', i, end='')
+
+print('\nCommission:', end='')
+
 

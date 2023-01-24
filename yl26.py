@@ -80,6 +80,9 @@ for employee_name, employee_sales in sales.items():
         if profit > 0:
             print('kasum on pos', profit * 0.062)
             comission += profit * 0.062
-
+            round(commission)
+    
     print(comission)
     
+
+

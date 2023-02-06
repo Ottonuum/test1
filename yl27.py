@@ -6,7 +6,7 @@ reddit = praw.Reddit(client_id='mIg6H3HbPtodWrKTJO5ZlQ', \
                      client_secret='YjXGJiMB4_EbRZtT-ycGeEWL8Vs6Dg', \
                      user_agent='Bob', \
                      username='Jolodragon66', \
-                     password='Dragon196575')
+                     password='********')
 
 subredditname = "Eesti"
 

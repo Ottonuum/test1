@@ -1,15 +1,14 @@
 import random
 
-x = random.randint(0, 101)
+arvuti = random.randrange(0,100)
 
-guess = -1
-while x != guess:
+while(True):
+    text = int (input('Arva ära number 1-100: '))
 
-    guess = int(input('Paku arvu: '))
-
-    if x > guess:
-        print('Paku suurem')
-    elif x < guess:
+    if arvuti == text:
+        print('Õige')
+        guess = int ()
+    elif arvuti < text:
         print('Paku väiksem')
-    elif x == guess:
-        print('Õige!')
+    else :
+        print('suurem')
